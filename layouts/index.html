@@ -9,14 +9,19 @@
 <html>
 
 	<head>
+
 		{{ partial "head.html" . }}
+
 	</head>
 
 	<body>
 
 		{{ $list := .Site.Params.block }}
 
+	    {{ "<!-- header -->" | safeHTML }}
+	    <section id="header">
 		{{ partial "hero.html" (dict "block" .Site.Params.hero "params" $.Site.Params "next" (index $list 0)) }}
+    	</section>
 
 		{{ range $index, $element := $list }}
 
@@ -46,8 +51,6 @@
 		{{ end }}
 
 		{{ partial "scripts.html" . }}
-
-		{{ partial "footer_custom.html" . }}
 
 	</body>
 
