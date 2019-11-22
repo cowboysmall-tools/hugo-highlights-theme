@@ -3,19 +3,18 @@
 
 name = "Highlights"
 license = "Creative Commons Attribution 3.0 Unported"
-licenselink = "https://github.com/schmanat/hugo-highlights-theme/blob/master/LICENSE.md"
+licenselink = "//github.com/cowboysmall-tools/hugo-highlights-theme/blob/master/LICENSE.md"
 description = "a one page site for gohugo.io created by html5up"
-homepage = ""
+homepage = "//github.com/cowboysmall-tools/hugo-highlights-theme"
 tags = ["portfolio", "onepage", "one page", "contact form", "google analytics"]
 features = ["onepage", "one page", "contact form", "google analytics"]
-min_version = 0.15
+min_version = "0.41"
 
 [author]
-  name = "Manuel Schneider"
-  homepage = "//schman.at"
+  name = "Jerry Kiely"
+  homepage = "//github.com/cowboysmall"
 
 # If porting an existing theme
 [original]
   name = "HTML5UP - Highlights"
   homepage = "//html5up.net/highlights"
-  repo = ""
