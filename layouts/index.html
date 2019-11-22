@@ -24,18 +24,14 @@
     	</section>
 
 		{{ range $index, $element := $list }}
-
-		{{ $last := eq $index (sub (len $list) 1) }}
-
 		{{ print "<!-- " $element.id " -->" | safeHTML }}
 		<section id="{{ $element.id }}" class="main special">
-		{{ if $last }}
-		{{ partial (print $element.type ".html") (dict "block" $element "params" $.Site.Params "next" $.Site.Params.footer) }}
-		{{ else }}
+		{{ if ne $index (sub (len $list) 1) }}
 		{{ partial (print $element.type ".html") (dict "block" $element "params" $.Site.Params "next" (index $list (add $index 1))) }}
+		{{ else }}
+		{{ partial (print $element.type ".html") (dict "block" $element "params" $.Site.Params "next" $.Site.Params.footer) }}
 		{{ end }}
 		</section>
-
 		{{ end }}
 
 		{{ "<!-- Footer -->" | safeHTML }}
