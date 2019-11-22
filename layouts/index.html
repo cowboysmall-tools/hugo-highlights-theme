@@ -28,11 +28,11 @@
 			{{ $last := eq $index (sub (len $list) 1) }}
 
 			{{ if and $.Site.Params.footer.enable $last }}
-				{{ "<!-- Footer -->" | safeHTML }}
-				<section id="footer">
+		{{ "<!-- Footer -->" | safeHTML }}
+		<section id="footer">
 			{{ else }}
-				{{ print "<!-- " $element.id " -->" | safeHTML }}
-				<section id="{{ $element.id }}" class="main special">
+		{{ print "<!-- " $element.id " -->" | safeHTML }}
+		<section id="{{ $element.id }}" class="main special">
 			{{ end }}
 
 			{{ if $last }}
@@ -47,7 +47,7 @@
 				{{ end }}
 			{{ end }}
 
-				</section>
+		</section>
 
 		{{ end }}
 
