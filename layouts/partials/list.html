@@ -13,7 +13,11 @@
                     <ul class="icons-grid">
                         {{ range .block.item }}
                         <li>
+                            {{ if .link }}
+                            <a href="{{ .link }}"><span class="{{ .icon }}"></span></a>
+                            {{ else }}
                             <span class="{{ .icon }}"></span>
+                            {{ end }}
                             <h3>{{ .title }}</h3>
                         </li>
                         {{ end }}
