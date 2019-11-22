@@ -8,6 +8,7 @@
                         <h2>{{ with .block.title }}{{ . | markdownify }}{{ end }}</h2>
                     </header>
                     <p>{{ with .block.description }}{{ . | markdownify }}{{ end }}</p>
+
                     <form method="post" action="//formspree.io/{{ with .params.email }}{{.}}{{ end }}">
                         <div class="row uniform">
                             <div class="6u 12u$(xsmall)"><input type="text" name="name" id="name" placeholder="{{ with .block.form.name }}{{ . }}{{ end }}" /></div>
@@ -20,6 +21,7 @@
                             </div>
                         </div>
                     </form>
+
                 </div>
                 {{ if .next }}
                 <a href="#{{ .next.id }}" class="goto-next scrolly">{{ with .block.buttontext }}{{ . | markdownify }}{{ end }}</a>

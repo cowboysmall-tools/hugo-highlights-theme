@@ -8,6 +8,7 @@
                         <h2>{{ with .block.title }}{{ . | markdownify }}{{ end }}</h2>
                     </header>
                     <p>{{ with .block.description }}{{ . | markdownify }}{{ end }}</p>
+
                     <ul class="icons-grid">
                         {{ range .block.item }}
                         <li>
@@ -16,6 +17,7 @@
                         </li>
                         {{ end }}
                     </ul>
+
                 </div>
                 {{ if .next }}
                 <a href="#{{ .next.id }}" class="goto-next scrolly">{{ with .block.buttontext }}{{ . | markdownify }}{{ end }}</a>

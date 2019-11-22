@@ -8,6 +8,7 @@
                         <h2>{{ with .block.title }}{{ . | markdownify }}{{ end }}</h2>
                     </header>
                     <p>{{ with .block.description }}{{ . | markdownify }}{{ end }}</p>
+
                 </div>
                 {{ if .next }}
                 <a href="#{{ .next.id }}" class="goto-next scrolly">{{ with .block.buttontext }}{{ . | markdownify }}{{ end }}</a>
