@@ -6,9 +6,8 @@
 
             <div class="container">
                 <ul class="actions special">
-                    {{ $next := index .Site.Params.block 0 }}
-                    {{ if $next }}
-                    <li><a href="#{{ $next.id }}" class="button primary scrolly">{{ .Site.Params.header.buttontext | markdownify }}</a></li>
-                    {{ end }}
+                    {{ if .Site.Params.header.next -}}
+                    <li><a href="#{{ .Site.Params.header.next }}" class="button primary scrolly">{{ .Site.Params.header.buttonText | markdownify }}</a></li>
+                    {{- end }}
                 </ul>
             </div>

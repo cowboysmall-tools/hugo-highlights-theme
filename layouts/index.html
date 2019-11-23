@@ -16,40 +16,24 @@
 
 	<body class="is-preload">
 
-
 	    {{ "<!-- header -->" | safeHTML }}
 	    <section id="header">
 		{{ partial "header.html" . }}
     	</section>
 
-
-		{{ $list := .Site.Params.block }}
-
-
-		{{ range $index, $block := $list }}
-
-		{{ print "<!-- " $block.id " -->" | safeHTML }}
-		<section id="{{ $block.id }}" class="main special">
-
-		{{ if ne $index (sub (len $list) 1) }}
-		{{ partial (print $block.type ".html") (dict "block" $block "next" (index $list (add $index 1))) }}
-		{{ else }}
-		{{ partial (print $block.type ".html") (dict "block" $block "next" $.Site.Params.footer) }}
-		{{ end }}
-
+		{{ range .Site.Params.block }}
+		{{ print "<!-- " .id " -->" | safeHTML }}
+		<section id="{{ .id }}" class="main special">
+		{{ partial (print .type ".html") (dict "block" . "Site" $.Site) }}
 		</section>
-
 		{{ end }}
-
 
 		{{ "<!-- Footer -->" | safeHTML }}
 		<section id="footer">
 		{{ partial "footer.html" . }}
 		</section>
 
-
 		{{ partial "scripts.html" . }}
-
 
 	</body>
 

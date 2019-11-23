@@ -1,5 +1,5 @@
 # Site settings
-baseurl = "https://www.example.com"
+baseURL = "https://www.example.com"
 languageCode = "en-us"
 title = "Highlights"
 theme = "hugo-highlights-theme"
@@ -13,7 +13,7 @@ googleAnalytics = "UA-XXXXXXX-Y"
   name = "Your Name"
   description = "Your Description"
   email = "your@mail.com"
-  backgroundpersection = true
+  backgroundPerSection = true
 
 
 
@@ -25,7 +25,8 @@ googleAnalytics = "UA-XXXXXXX-Y"
     type = "header"
     title = "Highlights"
     description = "a fun little { responsive } single Pager by [HTML5 UP](//html5up.net)"
-    buttontext = "begin"
+    buttonText = "begin"
+    next = "about"
 
 
 
@@ -38,7 +39,7 @@ googleAnalytics = "UA-XXXXXXX-Y"
     type = "text"
     title = "Who I Am"
     description = "Aliquam ante ac id. Adipiscing interdum lorem praesent fusce pellentesque arcu feugiat. Consequat sed ultricies rutrum. Sed adipiscing eu amet interdum lorem blandit vis ac commodo aliquet integer vulputate phasellus lorem ipsum dolor lorem magna consequat sed etiam adipiscing interdum."
-    buttontext = "next"
+    next = "skills"
     picture = "pic01.jpg"
 
 
@@ -52,7 +53,7 @@ googleAnalytics = "UA-XXXXXXX-Y"
     type = "list"
     title = "Stuff I do"
     description = "Consequat sed ultricies rutrum. Sed adipiscing eu amet interdum lorem blandit vis ac commodo aliquet vulputate."
-    buttontext = "next"
+    next = "infos"
     picture = "pic02.jpg"
 
     [[params.block.item]]
@@ -82,6 +83,7 @@ googleAnalytics = "UA-XXXXXXX-Y"
     type = "text"
     title = "One more thing"
     description = "Aliquam ante ac id. Adipiscing interdum lorem praesent fusce pellentesque arcu feugiat. Consequat sed ultricies rutrum. Sed adipiscing eu amet interdum lorem blandit vis ac commodo aliquet integer vulputate phasellus lorem ipsum dolor lorem magna consequat sed etiam adipiscing interdum."
+    next = "footer"
     picture = "pic03.jpg"
 
 
@@ -99,7 +101,7 @@ googleAnalytics = "UA-XXXXXXX-Y"
       name = "Name"
       email = "Email"
       message = "Message"
-      buttontext = "send message"
+      buttonText = "Send Message"
 
     [[params.footer.social]]
       title = "Twitter"

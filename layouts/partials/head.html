@@ -2,10 +2,9 @@
         <title>{{ .Site.Title }}</title>
 
         <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <meta name="description" content="{{ with .Site.Params.description }} {{ . }} {{ end }}">
-        <meta name="author" content="{{ with .Site.Params.name }} {{ . }} {{ end }}">
+        <meta name="author" content="{{ .Site.Params.name }}">
+        <meta name="description" content="{{ .Site.Params.description }}">
 
         <link rel="stylesheet" href="{{ .Site.BaseURL }}assets/css/main.css" />

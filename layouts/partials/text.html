@@ -1,8 +1,8 @@
 
             <div class="container">
-                {{ if eq .Site.Params.backgroundpersection true }}
+                {{ if .Site.Params.backgroundPerSection -}}
                 <span class="image fit primary"><img src="{{ .Site.BaseURL }}assets/images/{{ .block.picture }}" alt="" /></span>
-                {{ end }}
+                {{- end }}
 
                 <div class="content">
                     <header class="major">
@@ -11,7 +11,7 @@
                     <p>{{ .block.description | markdownify }}</p>
                 </div>
 
-                {{ if .next }}
-                <a href="#{{ .next.id }}" class="goto-next scrolly">{{ .block.buttontext | markdownify }}</a>
-                {{ end }}
+                {{ if .block.next -}}
+                <a href="#{{ .block.next }}" class="goto-next scrolly">{{ .block.buttonText | markdownify }}</a>
+                {{- end }}
             </div>

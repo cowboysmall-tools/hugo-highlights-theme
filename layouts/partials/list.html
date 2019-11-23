@@ -1,15 +1,14 @@
 
             <div class="container">
-                {{ if eq .Site.Params.backgroundpersection true }}
+                {{ if .Site.Params.backgroundPerSection -}}
                 <span class="image fit primary"><img src="{{ .Site.BaseURL }}assets/images/{{ .block.picture }}" alt="" /></span>
-                {{ end }}
+                {{- end }}
 
                 <div class="content">
                     <header class="major">
                         <h2>{{ .block.title | markdownify }}</h2>
                     </header>
                     <p>{{ .block.description | markdownify }}</p>
-
                     <ul class="icons-grid">
                         {{ range .block.item }}
                         <li>
@@ -24,7 +23,7 @@
                     </ul>
                 </div>
 
-                {{ if .next }}
-                <a href="#{{ .next.id }}" class="goto-next scrolly">{{ .block.buttontext | markdownify }}</a>
-                {{ end }}
+                {{ if .block.next -}}
+                <a href="#{{ .block.next }}" class="goto-next scrolly">{{ .block.buttonText | markdownify }}</a>
+                {{- end }}
             </div>
