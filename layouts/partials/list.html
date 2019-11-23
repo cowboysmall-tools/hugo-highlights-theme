@@ -1,14 +1,14 @@
 
             <div class="container">
-                {{ if eq .params.backgroundpersection true }}
-                <span class="image fit primary"><img src="{{ .Site.BaseURL }}assets/images/{{ with .block.picture }}{{ . }}{{ end }}" alt="" /></span>
+                {{ if eq .Site.Params.backgroundpersection true }}
+                <span class="image fit primary"><img src="{{ .Site.BaseURL }}assets/images/{{ .block.picture }}" alt="" /></span>
                 {{ end }}
 
                 <div class="content">
                     <header class="major">
-                        <h2>{{ with .block.title }}{{ . | markdownify }}{{ end }}</h2>
+                        <h2>{{ .block.title | markdownify }}</h2>
                     </header>
-                    <p>{{ with .block.description }}{{ . | markdownify }}{{ end }}</p>
+                    <p>{{ .block.description | markdownify }}</p>
 
                     <ul class="icons-grid">
                         {{ range .block.item }}
@@ -25,6 +25,6 @@
                 </div>
 
                 {{ if .next }}
-                <a href="#{{ .next.id }}" class="goto-next scrolly">{{ with .block.buttontext }}{{ . | markdownify }}{{ end }}</a>
+                <a href="#{{ .next.id }}" class="goto-next scrolly">{{ .block.buttontext | markdownify }}</a>
                 {{ end }}
             </div>

@@ -1,13 +1,14 @@
 
             <header class="major">
-                <h1>{{ with .block.title }} {{ . | markdownify }} {{ end }}</h1>
-                <p>{{ with .block.description }} {{ . | markdownify }} {{ end }}</p>
+                <h1>{{ .Site.Params.header.title | markdownify }}</h1>
+                <p>{{ .Site.Params.header.description | markdownify }}</p>
             </header>
 
             <div class="container">
                 <ul class="actions special">
-                    {{ if .next }}
-                    <li><a href="#{{ .next.id }}" class="button primary scrolly">{{ with .block.buttontext }}{{ . | markdownify }}{{ end }}</a></li>
+                    {{ $next := index .Site.Params.block 0 }}
+                    {{ if $next }}
+                    <li><a href="#{{ $next.id }}" class="button primary scrolly">{{ .Site.Params.header.buttontext | markdownify }}</a></li>
                     {{ end }}
                 </ul>
             </div>

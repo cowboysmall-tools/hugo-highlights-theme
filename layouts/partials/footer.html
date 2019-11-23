@@ -1,33 +1,35 @@
 
             <div class="container">
                 <header class="major">
-                    <h2>{{ with .block.title }}{{ . | markdownify }}{{ end }}</h2>
+                    <h2>{{ .Site.Params.footer.title | markdownify }}</h2>
                 </header>
-                {{ if .block.description }}
-                <p>{{ with .block.description }}{{ . | markdownify }}{{ end }}</p>
-                {{ end }}
+                {{ with .Site.Params.footer.description }}<p>{{ . | markdownify }}</p>{{ end }}
 
-                <form method="post" action="//formspree.io/{{ with .params.email }}{{ . }}{{ end }}">
+                <form method="post" action="//formspree.io/{{ .Site.Params.email }}">
                     <div class="row gtr-uniform">
-                        <div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="{{ with .block.form.name }}{{ . }}{{ end }}" /></div>
-                        <div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="{{ with .block.form.email }}{{ . }}{{ end }}" /></div>
-                        <div class="col-12"><textarea name="message" id="message" placeholder="{{ with .block.form.message }}{{ . }}{{ end }}" rows="4"></textarea></div>
+                        {{ with .Site.Params.footer.form }}
+                        <div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="{{ .name }}" /></div>
+                        <div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="{{ .email }}" /></div>
+                        <div class="col-12"><textarea name="message" id="message" placeholder="{{ .message }}" rows="4"></textarea></div>
                         <div class="col-12">
                             <ul class="actions special">
-                                <li><input type="submit" value="{{ with .block.form.buttontext }}{{ . }}{{ end }}" class="primary" /></li>
+                                <li><input type="submit" value="{{ .buttontext }}" class="primary" /></li>
                             </ul>
                         </div>
+                        {{ end }}
                     </div>
                 </form>
             </div>
 
             <footer>
                 <ul class="icons">
-                    {{ range .block.social }}
+                    {{ range .Site.Params.footer.social }}
                     <li><a href="{{ .link }}" class="{{ .icon }}"><span class="label">{{ .title }}</span></a></li>
                     {{ end }}
                 </ul>
                 <ul class="copyright">
-                    {{ range .block.copyright }}<li>{{ .text | markdownify }}</li>{{ end }}
+                    {{ range .Site.Params.footer.copyright -}}
+                    <li>{{ .text | markdownify }}</li>
+                    {{- end }}
                 </ul>
             </footer>
