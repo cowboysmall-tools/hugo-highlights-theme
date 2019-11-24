@@ -4,7 +4,6 @@
                     <h2>{{ .Site.Params.footer.title | markdownify }}</h2>
                 </header>
                 {{ with .Site.Params.footer.description }}<p>{{ . | markdownify }}</p>{{ end }}
-
                 <form method="post" action="//formspree.io/{{ .Site.Params.email }}">
                     <div class="row gtr-uniform">
                         {{ with .Site.Params.footer.form }}
