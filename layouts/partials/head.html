@@ -7,4 +7,7 @@
         <meta name="author" content="{{ .Site.Params.name }}">
         <meta name="description" content="{{ .Site.Params.description }}">
 
-        <link rel="stylesheet" href="{{ .Site.BaseURL }}assets/css/main.css" />
+        <!-- Theme SCSS -->
+        {{ $style := resources.Get "sass/main.scss" | toCSS (dict "targetPath" "assets/css/main.css") | minify | fingerprint }}
+        <link rel="stylesheet" href="{{ $style.Permalink }}">
+        <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}assets/css/main.css" /> -->
