@@ -24,7 +24,7 @@
 		{{ range .Site.Params.block }}
 		{{ print "<!-- " .id " -->" | safeHTML }}
 		<section id="{{ .id }}" class="main special">
-		{{ partial (print .type ".html") (dict "block" . "Site" $.Site) }}
+		{{ partial (print "blocks/" .type ".html") (dict "block" . "Site" $.Site) }}
 		</section>
 		{{ end }}
 

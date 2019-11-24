@@ -36,7 +36,7 @@ googleAnalytics = "UA-XXXXXXX-Y"
   # about section
   [[params.block]]
     id = "about"
-    type = "text"
+    type = "simple"
     title = "Who I Am"
     description = "Aliquam ante ac id. Adipiscing interdum lorem praesent fusce pellentesque arcu feugiat. Consequat sed ultricies rutrum. Sed adipiscing eu amet interdum lorem blandit vis ac commodo aliquet integer vulputate phasellus lorem ipsum dolor lorem magna consequat sed etiam adipiscing interdum."
     button = "Next"
@@ -51,7 +51,7 @@ googleAnalytics = "UA-XXXXXXX-Y"
   # skill section
   [[params.block]]
     id = "skills"
-    type = "list"
+    type = "complex"
     title = "Stuff I do"
     description = "Consequat sed ultricies rutrum. Sed adipiscing eu amet interdum lorem blandit vis ac commodo aliquet vulputate."
     button = "Next"
@@ -82,7 +82,7 @@ googleAnalytics = "UA-XXXXXXX-Y"
   # infos section
   [[params.block]]
     id = "infos"
-    type = "text"
+    type = "simple"
     title = "One more thing"
     description = "Aliquam ante ac id. Adipiscing interdum lorem praesent fusce pellentesque arcu feugiat. Consequat sed ultricies rutrum. Sed adipiscing eu amet interdum lorem blandit vis ac commodo aliquet integer vulputate phasellus lorem ipsum dolor lorem magna consequat sed etiam adipiscing interdum."
     button = "Next"
@@ -133,6 +133,4 @@ googleAnalytics = "UA-XXXXXXX-Y"
       text = "Design: [HTML5 UP](//html5up.net)"
     [[params.footer.copyright]]
       text = "Demo Images: [Unsplash](//unsplash.com/)"
-
-
 
