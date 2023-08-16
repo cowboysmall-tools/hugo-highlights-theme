@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <meta name="author" content="{{ .Site.Params.name }}">
         <meta name="description" content="{{ .Site.Params.description }}">
-        {{ .Hugo.Generator }}
+        {{ hugo.Generator }}
 
         <!-- Theme SCSS -->
         {{ $style := resources.Get "sass/main.scss" | toCSS (dict "targetPath" "assets/css/main.css") | minify | fingerprint }}
